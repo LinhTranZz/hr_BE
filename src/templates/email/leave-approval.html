@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo phê duyệt đơn xin nghỉ phép</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 0 10px;
+        }
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+        }
+        .info {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #28a745;
+        }
+        .reason {
+            background-color: #d4edda;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #28a745;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>THÔNG BÁO PHÊ DUYỆT ĐƠN XIN NGHỈ PHÉP</h1>
+        </div>
+
+        <div class="content">
+            <p>Kính gửi <strong>{{hoTenNhanVien}}</strong>,</p>
+
+            <div class="status">
+                {{status}}
+            </div>
+
+            <div class="info">
+                <h3>Thông tin đơn xin nghỉ phép:</h3>
+                <p><strong>Mã đơn:</strong> {{maNghiPhep}}</p>
+                <p><strong>Họ tên:</strong> {{hoTenNhanVien}}</p>
+                <p><strong>Ngày bắt đầu:</strong> {{ngayBatDau}}</p>
+                <p><strong>Ngày kết thúc:</strong> {{ngayKetThuc}}</p>
+                <p><strong>Lý do:</strong> {{lyDo}}</p>
+            </div>
+
+            {{#if ghiChu}}
+            <div class="reason">
+                <h3>Ghi chú từ người duyệt:</h3>
+                <p>{{ghiChu}}</p>
+            </div>
+            {{/if}}
+
+            <p>Chúc mừng! Đơn xin nghỉ phép của bạn đã được phê duyệt. Vui lòng liên hệ với phòng nhân sự nếu có bất kỳ thắc mắc nào.</p>
+
+            <p>Trân trọng,<br>
+            <strong>Phòng Nhân sự</strong></p>
+        </div>
+
+        <div class="footer">
+            <p>Email này được gửi tự động từ hệ thống quản lý nhân sự.</p>
+            <p>Vui lòng không trả lời email này.</p>
+        </div>
+    </div>
+</body>
+</html>
